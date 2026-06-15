@@ -1,0 +1,199 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{array}
+
+\hypersetup{pageanchor=false}
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\uppercase}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+
+\titlespacing{\section}{0pt}{6pt}{4pt}
+
+\setlist[itemize]{
+    leftmargin=*,
+    itemsep=1pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \textbf{#1} \hfill \textit{#2}
+}
+
+\begin{document}
+
+% ===================== HEADER =====================
+
+\begin{center}
+    {\LARGE \textbf{RICARDO ALEXANDER BARTRA QUISPE}} \\[3pt]
+    Lima, Peru \;|\; \href{mailto:ricardo.bartra@pucp.edu.pe}{ricardo.bartra@pucp.edu.pe} \;|\; +51 919 503 758 \\
+    \href{https://www.linkedin.com/in/ribartra}{linkedin.com/in/ribartra} \;|\;
+    \href{https://github.com/ribartra}{github.com/ribartra}
+\end{center}
+
+% ===================== SUMMARY =====================
+
+\section{Professional Summary}
+
+AI and backend engineer focused on document intelligence, OCR validation, microservice architectures, and applied machine learning. Built production-oriented prototypes for Peruvian identity and education documents, human-in-the-loop OCR review, SAT practice workflows, legal/regulatory scraping, and image-recognition APIs. Strong practical stack across Python/FastAPI, Rust/Axum, Java/Spring Boot, TypeScript/Next.js, PostgreSQL, Redis, Docker Compose, Prisma, SQLAlchemy, OCR engines, PDF parsing, computer vision, and metrics-driven evaluation.
+
+% ===================== SKILLS =====================
+
+\section{Skills}
+
+\textbf{Languages:} Python, Rust, Java, TypeScript, JavaScript, SQL, Bash \\
+
+\textbf{Backend:} FastAPI, Axum, Express, Spring Boot, REST APIs, async services, JWT, webhooks, service orchestration, API gateways \\
+
+\textbf{AI, OCR \& Data:} OCR, document understanding, computer vision, OpenCV, Docling, RapidOCR, GLM-OCR/Ollama, YOLO, pdfplumber, PyMuPDF, pandas, NumPy, SciPy, embeddings, RAG concepts \\
+
+\textbf{Infrastructure:} Docker, Docker Compose, PostgreSQL, Redis Streams, SQLite, MySQL, S3 storage, Prometheus, GitHub Actions \\
+
+\textbf{Frontend:} Next.js App Router, React, Tailwind CSS, Radix UI, TanStack Table, React Hook Form, Zod, NextAuth, Prisma \\
+
+\textbf{Evaluation \& Optimization:} Benchmarking, extraction metrics, quality gates, fuzzy matching, regression analysis, model/service latency, ACO, PSO, ABC, combinatorial optimization
+
+% ===================== EXPERIENCE =====================
+
+\section{Experience}
+
+\resumeSubheading
+{AI / Backend Engineering Contributor}
+{[Start Date] -- Present}
+{Independent, Academic and Project-Based Work}
+{Lima, Peru}
+
+\begin{itemize}
+    \item Built OCR and document-validation services for DNI, COE, CLA, CNR, FRP and related document families using Python, FastAPI, OCR engines, PDF parsers, image preprocessing, fuzzy matching, and structured JSON outputs.
+    \item Designed a Docker Compose backend for document processing with Rust APIs, Python workers, PostgreSQL, Redis queues, review services, rule configuration, status tracking, authentication, rate limiting, and observability endpoints.
+    \item Developed Rust services with Axum, Tokio, Redis, JWT, Prometheus, tracing, and SQL-backed service boundaries for gateway, ingestion, queue dispatching, rules, and status APIs.
+    \item Implemented human-in-the-loop review workflows with FastAPI, SQLAlchemy async, Alembic, Pydantic, PostgreSQL, S3-compatible storage, and manual QA states for OCR pipelines.
+    \item Created OCR benchmarks and validation reports measuring extraction quality, image resolution impact, execution time, and field-level match quality across document formats.
+    \item Built web application workflows with Next.js, React, TypeScript, Prisma, NextAuth, Tailwind, Radix UI, Zod, and TanStack Table for role-based portals, assignments, testing flows, and administrative dashboards.
+\end{itemize}
+
+\resumeSubheading
+{Research Assistant -- Applied AI and Optimization}
+{[Start Date] -- Present}
+{[University / Research Lab / Project Name]}
+{Lima, Peru}
+
+\begin{itemize}
+    \item Designed experiments for applied AI, document understanding, retrieval-augmented generation, model evaluation, quantization, and lightweight deployment.
+    \item Implemented and compared metaheuristic approaches including Ant Colony Optimization with Time Windows, Artificial Bee Colony, and Particle Swarm Optimization for routing, scheduling, and constrained search problems.
+    \item Built reproducible evaluation loops with train/test separation, metric computation, confusion matrices, regression metrics, custom objective functions, and comparative experiment summaries.
+    \item Produced technical documentation, architecture notes, implementation guides, API references, and benchmark reports for AI and backend systems.
+\end{itemize}
+
+% ===================== PROJECTS =====================
+
+\section{Selected Projects}
+
+\resumeProjectHeading
+{OCR Document Processing Platform}{Rust, Python, FastAPI, Axum, PostgreSQL, Redis, Docker}
+
+\begin{itemize}
+    \item Designed a multi-service OCR backend with API gateway, ingest API, status API, rules API, queue service, review API, and specialized detect/extract workers.
+    \item Implemented document-family workflows for DNI, CNR, COE, FRP, CLA and LN using OCR, layout detection, PDF parsing, validation rules, and worker-based processing.
+    \item Used Redis Streams for dispatching, PostgreSQL for service-owned persistence, Docker Compose for orchestration, Prometheus for metrics, and JWT/internal tokens for service access.
+    \item Added human review integration for low-confidence or manually validated OCR results.
+\end{itemize}
+
+\resumeProjectHeading
+{DNI and RENIEC Document Validators}{Python, FastAPI, OpenCV, Docling, GLM-OCR, Ollama}
+
+\begin{itemize}
+    \item Built a DNI validation pipeline with image quality checks, resizing, OCR by text boxes, dual-format field extraction, exact DNI matching, fuzzy name matching, and JSON/HTML reporting.
+    \item Supported multiple OCR paths including GLM-OCR through Ollama and Docling, with benchmarking for resolution, latency, and extraction quality.
+    \item Extended document extraction patterns to RENIEC and related Peruvian document validation workflows using structured outputs and test datasets.
+\end{itemize}
+
+\resumeProjectHeading
+{COE Certificate Extraction and Validation}{Python, FastAPI, pdfplumber, pandas, NumPy}
+
+\begin{itemize}
+    \item Built extraction logic for Peruvian Certificates of Studies across DCN 2009, CNEB 2016, and transition formats.
+    \item Combined table extraction, regex-based text parsing, duplicate consolidation, invalid-table detection, structured JSON generation, and Markdown/CSV metric reports.
+    \item Exposed the pipeline through a REST API and standalone benchmark scripts for batch processing and timing analysis.
+\end{itemize}
+
+\resumeProjectHeading
+{SAT Practice Platform}{Next.js, React, TypeScript, Prisma, NextAuth, Tailwind}
+
+\begin{itemize}
+    \item Developed a role-based SAT preparation platform for students, teachers, admins, and parents with protected portals and validation states.
+    \item Implemented assignment flows, timed practice attempts, autosave, score submission, explanations, full practice tests, user invitations, password reset, and parent consent workflows.
+    \item Used Prisma with SQLite, NextAuth credentials/JWT, React Hook Form, Zod validation, Radix UI components, TanStack Table, KaTeX, and email notifications.
+\end{itemize}
+
+\resumeProjectHeading
+{Legal Researcher for Peruvian Telecom Regulation}{Node.js, Express, SQLite, Cron, PDF processing}
+
+\begin{itemize}
+    \item Built a daily scraper for El Peruano and OSIPTEL legal norms related to telecommunications, consumer protection, mobile services, SIM cards, and regulatory projects.
+    \item Implemented source-specific filters, PDF download, SHA-256 tracking, SQLite persistence, scheduled execution, HTTP API access, email reports, and webhook delivery.
+    \item Wrote automated tests using Node's native test runner and kept source keywords centralized for maintainable regulatory matching.
+\end{itemize}
+
+\resumeProjectHeading
+{Image Recognition REST and Scheduler APIs}{Java, Spring Boot, MySQL, S3, JWT}
+
+\begin{itemize}
+    \item Implemented REST APIs for image recognition workflows, verification rules, users, security, image formats, scheduler operations, and external-system integrations.
+    \item Used Spring Boot, Spring Security, JPA, validation, OpenAPI documentation, JWT authentication, MySQL, S3 integration, Apache POI, and layered endpoint documentation.
+\end{itemize}
+
+\resumeProjectHeading
+{Optimization and Model Evaluation Experiments}{Python, Java, ML, Metaheuristics}
+
+\begin{itemize}
+    \item Implemented ACO-TW, ABC, PSO, gradient-descent-based reasoning, and custom experiment loops for routing, assignment, scheduling, and parameter-search problems.
+    \item Evaluated models and algorithms with custom objective functions, classification/regression metrics, repeated runs, convergence analysis, and hyperparameter sensitivity.
+\end{itemize}
+
+% ===================== EDUCATION =====================
+
+\section{Education}
+
+\resumeSubheading
+{Pontificia Universidad Catolica del Peru}
+{[Start Date] -- [End Date]}
+{Bachelor's Degree in Informatics Engineering / Computer Engineering}
+{Lima, Peru}
+
+\begin{itemize}
+    \item Relevant Coursework: Artificial Intelligence, Software Engineering, Operating Systems, Information Security, Enterprise Architecture, ERP, Business Intelligence, Simulation, Statistics, Data Visualization.
+    \item Research Focus: document intelligence, Spanish-language AI systems, RAG evaluation, OCR validation, model efficiency, and applied optimization.
+\end{itemize}
+
+% ===================== CERTIFICATIONS =====================
+
+\section{Certifications and Training}
+
+\begin{itemize}
+    \item RAG, LLM evaluation, prompt engineering and lightweight AI deployment -- applied project experience
+    \item Docker, service orchestration, API gateways, queues and backend observability -- applied project experience
+    \item Machine learning, deep learning, OCR, computer vision and optimization -- academic and project experience
+    \item Hyperledger Fabric, ISO 20022 and digital asset infrastructure -- independent specialization
+\end{itemize}
+
+\end{document}
